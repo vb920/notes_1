@@ -1,0 +1,1083 @@
+# DSA
+
+
+## Design - 38
+- Min Stack (Med.)
+- Implement Queue Using Stacks (Easy)
+- Design HashSet (Easy)
+- Design HashMap (Easy)
+- Design Linked List (Med.)
+- Peeking Iterator (Med.)
+- Binary Search Tree Iterator (Med.)
+- Encode and Decode Strings (Med.)
+- Insert Delete GetRandom O(1) (Med.)
+- Kth Largest Element in a Stream (Easy)
+- LRU Cache (Med.)
+- Find Median from Data Stream (Hard)
+- Time Based Key-Value Store (Med.)
+- Snapshot Array (Med.)
+- Implement Trie (Prefix Tree) (Med.)
+- Design Add and Search Words (Med.)
+- Map Sum Pairs (Med.)
+- Design Search Autocomplete System (Hard)
+- All O(1) Data Structure (Hard)
+- LFU Cache (Hard)
+- Data Stream as Disjoint Intervals (Hard)
+- Range Module (Hard)
+- My Calendar I (Med.)
+- My Calendar II (Med.)
+- My Calendar III (Hard)
+- Design In-Memory File System (Hard)
+- Design a Text Editor (Hard)
+- Design Twitter (Med.)
+- Stock Price Fluctuation (Med.)
+- Design a Number Container System (Med.)
+- Logger Rate Limiter (Easy) / 362. Design Hit Counter (Med.) — sliding window counters.
+- Maximum Frequency Stack (Hard) — freq→stack mapping (counts‑of‑counts).
+- Max Stack (Hard) — stack + DLL + map; remove arbitrary node.
+- Serialize and Deserialize Binary Tree (Hard) / 449. …BST (Med.) — robust serialization patterns.
+- Stream of Characters (Hard) — reversed trie + streaming suffix checks.
+- Design a Food Rating System (Med.) — category→heap + lazy deletions.
+- Online Election (Med.) — prefix leaders + binary search.
+- RandomizedSet with Duplicates (Hard) — extends 380 with multiset index maps.
+
+
+
+## Hashing - 49
+- Two Sum — hash for complement lookup
+- Contains Duplicate — set membership
+- Find Common Elements Between Two Arrays — multiset intersection
+- Valid Anagram — frequency map basics
+- Group Anagrams — canonical form (sorted/signature)
+- Top K Frequent Elements — hash + heap (counts → top‑k)
+- Sort Characters by Frequency — count → order by freq
+- Longest Consecutive Sequence — set trick + hash lookup
+- Longest Substring Without Repeating Characters — window with last‑seen
+- Word Pattern — bijection via two maps
+- Isomorphic Strings — bijection check (forward/backward maps)
+- Minimum Window Substring — window freq deficit/surplus
+- Optimal Partition of String — greedy by last‑seen set
+- Substrings of Size Three with Distinct Characters — tiny window freq
+- Subarray Sum Equals K — prefSum map: count equal states
+- Subarray Sums Divisible by K — prefSum % k map
+- Continuous Subarray Sum — same remainder & length ≥ 2
+- Make Sum Divisible by P — minimum subarray removal via mod map
+- Binary Subarrays with Sum — prefSum + target
+- Count Number of Nice Subarrays — pref #odds → fixed sum trick
+- Count of Interesting Subarrays — mod arithmetic on transformed array
+- Number of Submatrices That Sum to Target — 2D: compress rows → 1D + hash
+- Count the Number of Beautiful Subarrays — XOR prefix equalities
+- Number of Wonderful Substrings — bitmask parity; same/one‑bit off masks
+- 4Sum II — hash pair sums (A+B vs −(C+D))
+- Pairs of Songs with Total Durations Divisible by 60 — mod pairing counts
+- Check if Array Pairs Are Divisible by K — freq of residues + symmetry
+- Count Pairs That Form a Complete Day II — identical to #26 pattern
+- Count Number of Bad Pairs — total pairs − good pairs via key = i − nums[i]
+- Tuple with Same Product — pair products → combinations count
+- Word Subsets — max‑freq signature (global need) vs per‑word counts
+- Vowel Spellchecker — multi-level canonical forms
+- Reconstruct Original Digits from English — signature letters & residual
+- Custom Sort String — order map + stable sort or counting
+- Finding the Users Active Minutes — per‑user set → histogram
+- Maximum Equal Frequency — maintain counts‑of‑counts; check feasibility
+- Grid Illumination — multi-hash on rows/cols/diagonals + adjacency turns
+- Insert Delete GetRandom O(1) — hash + array (index swap)
+- LRU Cache — hash + DLL; eviction invariant
+- Design HashMap / Design HashSet — buckets, load factor, collision strategy
+- Number of Good Pairs — basic counting via freq
+- Unique Number of Occurrences — values‑of‑freq uniqueness
+- Find Common Characters — per‑word min‑freq merge
+- Find Words That Can Be Formed by Characters — supply vs demand freq
+- Evaluate the Bracket Pairs of a String — key→value map substitution
+- Bulls and Cows — position vs multiset counts
+- Alphabet Board Path — char→coord mapping trick
+- Sort Array by Increasing Frequency — freq tie‑breaks
+- Redistribute Characters to Make All Strings Equal — global divisibility check
+
+## Greedy - 34
+- Lemonade Change — cash invariants — Always give change using larger bills last; cash counts never negative.
+- Assign Cookies — two pointers — Sort both; assign the smallest cookie that satisfies the current child to maximize count.
+- Boats to Save People — two pointers + exchange argument — Pair heaviest with lightest feasible; otherwise the heaviest must - go alone.
+- Bag of Tokens — two pointers + tradeoff — Spend smallest token to gain score; if stuck, sell largest token to regain power.
+- Advantage Shuffle — greedy matching — Beat each opponent’s number with your smallest number that can win, otherwise - sacrifice your smallest.
+- Jump Game — reachability invariant — Maintain farthest reachable index; fail iff i > farthest.
+- Jump Game II — layered greedy (BFS levels) — Expand the current range to the farthest next range; count boundary crossings.
+- Gas Station — prefix sum invariant — If total gas ≥ total cost, the answer is the index after the last negative prefix.
+- Non-Overlapping Intervals — interval scheduling — Sort by end time; greedily keep earliest finishing, drop overlaps.
+- Minimum Number of Arrows to Burst Balloons (add) — interval stabbing — Sort by end; shoot at current end until a balloon - starts after it.
+- Video Stitching (add) — interval cover, farthest reach — Within current end, pick clip that extends reach the most; then - jump layers.
+- Divide Intervals into Minimum Number of Groups — min-heaps / room allocation — Sort by start; reuse groups that end before - start.
+- Queue Reconstruction by Height — constructive greedy — Sort by height↓ and k↑; insert at index k to preserve counts.
+- Car Pooling — line sweep — Difference array of pickups/drops; capacity never exceeded.
+- Remove Duplicate Letters — monotonic stack + last occurrence — Pop bigger chars if they reappear later; ensure uniqueness - with a seen set.
+- Reorganize String — max-heap scheduling — Always place two most frequent different chars; invalid if max count exceeds ⌈n/2⌉.
+- Largest Merge of Two Strings — lexicographic greedy — Pick the head of the lexicographically larger suffix.
+- Partition Labels — last occurrence cuts — Greedily cut at the farthest last index of chars seen so far.
+- Optimal Partition of String — greedy set partition — Start new substring whenever next char is already in the current set.
+- Candy — two-pass constraints — Left→right enforces A[i]>A[i-1]; right→left enforces the reverse; take max of both.
+- Minimum Rounds to Complete All Tasks — counting greedy — If any count is 1 → impossible; otherwise use 2s and 3s to minimize.
+- Divide Array in Sets of K Consecutive Numbers — ordered multiset — From smallest key, greedily consume x, x+1, …, x+K-1.
+- Maximum Bags with Full Capacity of Rocks — fill smallest deficits first — Sort deficits; greedily fill until you run out.
+- Maximum Matching of Players with Trainers — two pointers — Sort both; greedily assign smallest trainer that can accommodate.
+- Patching Array — coverage invariant — Maintain coverage [1, miss); if next num ≤ miss, extend; else patch with miss.
+- Minimize Maximum of Array — prefix average — Optimal max is max(ceil(prefix_avg)); greedily check feasibility via prefix - sums.
+- Super Washing Machines — load balancing by prefix — Answer = max(max_load, max|prefix_imbalance|).
+- Course Schedule III (add) — deadline scheduling + heap — Sort by end day; keep taken durations in max-heap; remove the - longest if over deadline.
+- IPO (add) — resource-constrained selection — While you can afford, pick the project with max profit (heap), capital - increases greedily.
+- Task Scheduler — frequency scheduling — Either formula with max frequency and idle slots or heap simulation with cooldown.
+- Mice and Cheese — pick top deltas — Choose indices with highest (reward1 - reward2) to switch; sum optimal combination.
+- Previous Permutation with One Swap — lexicographic improvement — Swap the rightmost descent with the largest smaller to its - right (handle duplicates).
+- Construct K Palindrome Strings — feasibility — Need odd_count ≤ k ≤ n; the greedy distribution is straightforward.
+- Check If a String Can Break Another String — ordering dominance — Sort both; one breaks the other if it dominates - position-wise.
+- Maximum Number of Non-Overlapping Substrings — advanced intervals on characters — Expand [first,last] windows; pick minimal - valid windows greedily.
+
+## Intervals -20
+- Missing Ranges 
+- Remove Interval 
+- Add Bold Tag in String 
+- Insert Interval 
+- Merge Intervals 
+- Non Overlapping Intervals 
+- Interval List Intersections 
+- Meeting Rooms 
+- Meeting Rooms II 
+- Meeting Rooms III 
+- Divide Intervals Into Minimum Number of Groups	
+- Remove Covered Intervals	
+- Minimum Number of Arrows to Burst Balloons	
+- The Number of the Smallest Unoccupied Chair	
+- Check if Grid can be Cut into Sections	
+- My Calendar I	
+- My Calendar II	
+- Count Days Without Meetings	
+- Minimum Interval to Include Each Query 
+- Data Stream as Disjoint Intervals
+
+## Graph - 94
+- Find if Path Exists in Graph [BFS/DFS]
+- Keys and Rooms [DFS]
+- Is Graph Bipartite? [BFS/DFS, 2‑color]
+- Possible Bipartition [BFS/DFS, 2‑color]
+- Clone Graph [BFS/DFS, hash map]
+- Flood Fill [Grid]
+- Island Perimeter [Grid]
+- Number of Islands [Grid]
+- Max Area of Island [Grid]
+- Number of Enclaves [Grid]
+- Surrounded Regions [Grid, boundary BFS]
+- Find All Groups of Farmland [Grid]
+- Rotting Oranges [Grid, multi‑source BFS]
+- Detect Cycles in 2D Grid [Grid, cycle detection]
+- Nearest Exit from Entrance in Maze [BFS]
+- Shortest Path in Binary Matrix [BFS]
+- 01 Matrix [BFS, multi‑source]
+- As Far from Land as Possible [BFS, multi‑source]
+- Map of Highest Peak [BFS, multi‑source]
+- Shortest Bridge [BFS + flood]
+- Reorder Routes to Make All Paths Lead to the City Zero [Tree DFS/BFS]
+- Minimum Score of a Path Between Two Cities [Graph/Tree BFS/DFS]
+- Number of Provinces [DSU]
+- Redundant Connection [DSU]
+- Redundant Connection II [DSU + in‑degree cases]
+- Accounts Merge [DSU]
+- Smallest String With Swaps [DSU]
+- Most Stones Removed with Same Row or Column [DSU]
+- Make Network Connected (added) [DSU]
+- GCD Sort of an Array [DSU, factors]
+- Checking Existence of Edge Length Limited Paths [DSU, offline sort]
+- Remove Max Number of Edges to Keep Graph Fully Traversable [DSU]
+- Rank Transform of a Matrix [DSU + topo on values]
+- Find Latest Group of Size M [DSU]
+- Count Sub Islands [DSU/DFS]
+- Making a Large Island [DSU]
+- Bricks Falling When Hit [DSU, reverse ops]
+- Network Delay Time [Dij]
+- Path with Maximum Probability [Dij on log/priority]
+- Cheapest Flights Within K Stops [Bellman‑Ford / DP by stops]
+- Number of Ways to Arrive at Destination [Dij + count paths]
+- Path with Minimum Effort [Dij or bin‑search + BFS]
+- Number of Restricted Paths from First to Last Node [Dij + DP by dist]
+- Find the City With the Smallest Number of Neighbors at a Threshold Distance [Floyd‑Warshall / multi‑Dij]
+- Second Minimum Time to Reach Destination [Layered BFS]
+- Bus Routes [BFS on route graph]
+- Design Graph With Shortest Path Calculator [Dij/graph API]
+- Reachable Nodes in Subdivided Graph [Dij with quota]
+- Minimum Cost to Make at Least One Valid Path in a Grid [0‑1]
+- Shortest Path with Alternating Colors [BFS with color state]
+- Course Schedule [Topo/DAG, cycle detect]
+- Course Schedule II [Topo order]
+- Course Schedule IV [Reachability precompute]
+- All Ancestors of a Node in a Directed Acyclic Graph [Topo/DAG]
+- Largest Color Value in a Directed Graph [Topo with DP & cycle check]
+- Sort Items by Groups Respecting Dependencies [Topo with groups]
+- Build a Matrix With Conditions [Topo 2D]
+- Parallel Courses II [Topo + bitmask/time]
+- Parallel Courses III [Topo + longest path]
+- Loud and Rich [Topo on DAG dominance]
+- Find All Possible Recipes from Given Supplies [Topo on deps]
+- Number of Increasing Paths in a Grid [DAG DP on heights]
+- Longest Increasing Path in a Matrix [DAG DP on heights]
+- Open the Lock [BFS]
+- Word Ladder [BFS + wildcard buckets]
+- Word Ladder II [BFS layers + path reconstruction]
+- Snakes and Ladders [BFS, board mapping]
+- Sliding Puzzle [BFS state graph]
+- Shortest Path Visiting All Nodes [Mask, BFS/TSP]
+- Shortest Path to Get All Keys [Mask BFS, walls/keys]
+- Escape the Spreading Fire [Multi‑BFS/meet‑in‑time]
+- Jump Game III [BFS on indices]
+- Jump Game IV [BFS + value buckets]
+- Cat and Mouse [Game, retrograde BFS/DP]
+- Find the Shortest Superstring [Mask DP on overlaps]
+- Shortest Cycle in a Graph [BFS on undirected]
+- Critical Connections in a Network [Bridge, Tarjan]
+- Find Critical and Pseudo‑Critical Edges in Minimum Spanning Tree [MST + sensitivity]
+- Min Cost to Connect All Points [MST (Kruskal/Prim)]
+- Longest Cycle in a Graph [Cycle detect in directed graph]
+- Maximum Employees to Be Invited to a Meeting (added) [SCC/cycle + arms]
+- Reconstruct Itinerary (added) [Euler, Hierholzer + lexicographic]
+- Valid Arrangement of Pairs (added) [Euler on directed multigraph]
+- Minimum Number of Days to Disconnect Island (added) [AP, articulation points]
+- Minimum Operations to Convert Number [BFS on integer states]
+- Minimum Number of Operations to Make X and Y Equal [BFS on operations]
+- Open the Lock / Word Ladder family review [Heuristics/optimizations] (already covered; keep notes)
+- Evaluate Division (added) [Weighted DSU / graph ratios]
+- Divide Nodes into the Maximum Number of Groups [Bipartite + diameters per component]
+- Last Day Where You Can Still Cross [Binary search + DSU/BFS]
+- Maximum Candies You Can Get from Boxes [BFS with unlocks]
+- Satisfiability of Equality Equations [DSU equalities/inequalities]
+- Number of Possible Sets of Closing Branches [Tree/DSU (variant)]
+- Making a Large Island / Bricks Falling When Hit (review from DSU phase; advanced Union-Find tricks)
+
+## Dynamic Programming - 168
+- Climbing Stairs
+- Min Cost Climbing Stairs
+- House Robber
+- 2 Keys Keyboard
+- Maximum Subarray
+- Maximum Product Subarray
+- Maximum Subarray Sum with One Deletion
+- Wiggle Subsequence
+- Longest Turbulent Subarray
+- K‑Concatenation Maximum Sum
+- Constrained Subsequence Sum — NEW (DP + deque optimization)
+- Partition Equal Subset Sum
+- Target Sum (reduce to subset sum)
+- Coin Change (min # of coins)
+- Coin Change II (count ways; combos vs permutations)
+- Ones and Zeroes (2D knapsack)
+- Last Stone Weight II (balance split)
+- Shopping Offers (state compression by quantities)
+- Minimum Number of Coins for Fruits
+- Count of Sub‑Multisets With Bounded Sum
+- 0/1 Knapsack (template) — NEW
+- Rod Cutting (unbounded knapsack template) — NEW
+- Longest Increasing Subsequence (patience sorting)
+- Number of Longest Increasing Subsequence
+- Largest Divisible Subset
+- Russian Doll Envelopes
+- Maximum Length of Pair Chain
+- Make Array Strictly Increasing
+- Arithmetic Slices
+- Longest Arithmetic Subsequence
+- Longest Arithmetic Subsequence of Given Difference
+- K Inverse Pairs Array
+- Find the Maximum Length of a Good Subsequence II
+- Find the Count of Monotonic Pairs I
+- Find the Count of Monotonic Pairs II
+- Longest Unequal Adjacent Groups Subsequence II
+- Find the Maximum Length of Valid Subsequence II
+- Best Time to Buy and Sell Stock
+- Best Time to Buy and Sell Stock II
+- Best Time to Buy and Sell Stock with Cooldown
+- Best Time to Buy and Sell Stock with Transaction Fee
+- Best Time to Buy and Sell Stock III
+- Best Time to Buy and Sell Stock IV
+- Unique Paths
+- Unique Paths II
+- Minimum Path Sum
+- Out of Boundary Paths
+- Maximum Number of Moves in a Grid (DAG DP)
+- Where Will the Ball Fall
+- Minimum Falling Path Sum
+- Minimum Falling Path Sum II
+- Maximum Non Negative Product in a Matrix
+- Dungeon Game
+- Maximal Square
+- Count Square Submatrices with All Ones
+- Largest 1‑Bordered Square
+- Largest Plus Sign
+- Matrix Block Sum
+- Maximal Rectangle (histogram technique)
+- Max Sum of Rectangle No Larger Than K (row compression + ordered set)
+- Number of Submatrices That Sum to Target (row compression + hash)
+- Longest Palindromic Substring
+- Count Palindromic Substrings — NEW
+- Longest Palindromic Subsequence
+- Minimum Insertion Steps to Make a String Palindrome
+- Longest Common Subsequence
+- Delete Operation for Two Strings
+- Edit Distance
+- Interleaving String
+- Regular Expression Matching
+- Wildcard Matching
+- Shortest Common Supersequence
+- Max Dot Product of Two Subsequences
+- Apply Operations to Make Two Strings Equal
+- Minimum ASCII Delete Sum for Two Strings
+- Word Break
+- Word Break II
+- Unique Substrings in Wraparound String
+- Longest String Chain
+- Concatenated Words
+- Distinct Subsequences
+- Distinct Subsequences II
+- Palindrome Partitioning I — NEW
+- Palindrome Partitioning II
+- Palindrome Partitioning III
+- Longest Chunked Palindrome Decomposition
+- String Compression II
+- Number of Ways to Form a Target String Given a Dictionary
+- Minimum Changes to Make K Semi‑palindromes
+- Burst Balloons
+- Minimum Score Triangulation of Polygon
+- Minimum Cost Tree From Leaf Values
+- Minimum Cost to Merge Stones
+- Minimum Cost to Cut a Stick
+- Freedom Trail
+- Paint House III
+- Number of Ways of Cutting a Pizza
+- Build Array Where You Can Find The Maximum Exactly K Comparisons
+- Video Stitching
+- Filling Bookcase Shelves
+- Allocate Mailboxes
+- Partition Array for Maximum Sum (kept once)
+- Min Cost to Split Array — NEW (D&C optimization exemplar)
+- Matrix Chain Multiplication — NEW (classic interval template)
+- Combination Sum IV
+- Number of Dice Rolls With Target Sum
+- Dice Roll Simulation
+- Student Attendance Record I (LC551)
+- Student Attendance Record II (LC552)
+- Number of Music Playlists
+- Count Vowels Permutation
+- Kth Smallest Instructions
+- Count Numbers with Unique Digits
+- Count Sorted Vowel Strings
+- Soup Servings
+- New 21 Game
+- Champagne Tower
+- Knight Dialer
+- Probability of a Two Boxes Having the Same Number of Distinct Balls
+- Non‑negative Integers without Consecutive Ones
+- Numbers At Most N Given Digit Set
+- Numbers With Repeated Digits
+- Number of Digit One
+- Number of Beautiful Integers in the Range
+- Count the Number of Powerful Integers
+- Find All Good Strings
+- Smallest Sufficient Team
+- Stickers to Spell Word
+- Maximum Students Taking Exam
+- Number of Ways to Wear Different Hats to Each Other
+- Minimum Cost to Connect Two Groups of Points
+- Find Minimum Time to Finish All Jobs
+- Shortest Path Visiting All Nodes
+- Distribute Repeating Integers
+- Maximum Number of Achievable Transfer Requests
+- Maximize Grid Happiness
+- House Robber III
+- Longest ZigZag Path in a Binary Tree
+- Maximum Sum BST in Binary Tree
+- Number of Ways to Reorder Array to Get Same BST
+- Sum of Distances in Tree (re‑rooting DP)
+- Count Paths That Can Form a Palindrome in a Tree (bit parity on paths)
+- Find Number of Coins to Place in Tree Nodes
+- Minimize the Total Price of the Trips
+- Time Taken to Mark All Nodes
+- Maximum Points After Collecting Coins From All Nodes (kept once)
+- Maximum Score After Applying Operations on a Tree
+- Remove Boxes
+- Strange Printer
+- Super Egg Drop
+- Race Car
+- Least Operators to Express Number
+- Largest Multiple of Three
+- Predict the Winner
+- Stone Game
+- Stone Game VII
+- Stone Game V
+- Can I Win
+- Get the Maximum Score
+- Maximum Sum of 3 Non‑Overlapping Subarrays
+- Super Washing Machines
+- Maximize Total Cost of Alternating Subarrays
+- Reduce Dishes
+- Pizza With 3n Slices
+- Minimum Swaps To Make Sequences Increasing
+- Profitable Schemes
+- Minimum Sum of Values by Dividing Array
+- Numbers At Most N Given Digit Set 
+
+
+
+## Range Queries - 23
+- Static Range Sum Queries
+- Static Range Minimum Queries
+- Dynamic Range Sum Queries
+- Dynamic Range Minimum Queries
+- Range Xor Queries
+- Range Update Queries
+- Forest Queries
+- Hotel Queries
+- List Removals
+- Salary Queries
+- Prefix Sum Queries
+- Pizzeria Queries
+- Visible Buildings Queries
+- Range Interval Queries
+- Subarray Sum Queries
+- Subarray Sum Queries II
+- Distinct Values Queries
+- Distinct Values Queries II
+- Increasing Array Queries
+- Movie Festival Queries
+- Forest Queries II
+- Range Updates and Sums
+- Polynomial Queries
+- Range Queries and Copies
+- Missing Coin Sum Queries
+
+## Tree Algorithms - 15
+- Subordinates
+- Tree Matching
+- Tree Diameter
+- Tree Distances I
+- Tree Distances II
+- Company Queries I
+- Company Queries II
+- Distance Queries
+- Counting Paths
+- Subtree Queries
+- Path Queries
+- Path Queries II
+- Distinct Colors
+- Finding a Centroid
+- Fixed-Length Paths I
+- Fixed-Length Paths II
+- Mathematics
+
+## Two Pointers - 40
+- Merge Two 2D Arrays by Summing Values
+- Merge Sorted Array
+- Sort Array by Parity
+- Sort Array by Parity II
+- Rearrange Array Elements by Sign
+- Remove Duplicates from Sorted Array
+- Remove Element
+- Partition Array According to Given Pivot
+- Rotate Array
+- Apply Operations to an Array
+- Find All K-Distant Indices in an Array
+- Two Sum
+- 3Sum
+- 3Sum Closest
+- 4Sum
+- Sort Colors
+- Container With Most Water
+- Watering Plants II
+- Next Permutation
+- Next Greater Element III
+- Reverse String
+- Reverse Prefix of Word
+- Reverse Vowels of a String
+- Reverse Words in a String
+- Reverse Words in a String III
+- Valid Palindrome
+- Valid Palindrome II
+- Lexicographically Smallest Palindrome
+- Merge Strings Alternately
+- Largest Merge of Two Strings
+- Shortest Distance to a Character
+- DI String Match
+- Make String a Subsequence Using Cyclic Increments
+- Count Binary Substrings
+- Minimum Length of String After Deleting Similar Ends
+- String Compression
+- Separate Black and White Balls
+- Move Pieces to Obtain a String
+- Sentence Similarity III
+
+## Prefix Sum - 15
+- Range Sum Query - Immutable
+- Left and Right Sum Differences
+- Count Vowel Strings in Ranges
+- Minimum Penalty for a Shop
+- Find Good Days to Rob the Bank
+- Sum of Absolute Differences in a Sorted Array
+- Product of Array Except Self
+- Product of the Last K Numbers
+- Removing Minimum Number of Magic Beans
+- Find All Good Indices
+- Movement of Robots
+- Range Sum Query 2D - Immutable
+- Increment Submatrices by One
+- Power of Heroes
+- Minimum Cost to Make Array Equal
+
+
+## Sliding Window - 37
+- Substrings of Size Three with Distinct Characters
+- Find All Anagrams in a String
+- Permutation in String
+- Check If a String Contains All Binary Codes of Size K
+- Maximum Number of Vowels in a Substring of Given Length
+- Maximum Average Subarray I
+- Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold
+- K Radius Subarray Averages
+- Maximum Sum of Distinct Subarrays With Length K
+- Sliding Subarray Beauty
+- Maximum Points You Can Obtain from Cards
+- Sliding Window Median
+- Sliding Window Maximum
+- Max Value of Equation
+- Maximum Sum of 3 Non-Overlapping Subarrays
+- Longest Substring Without Repeating Characters
+- Longest Repeating Character Replacement
+- Maximum Number of Occurrences of a Substring
+- Max Consecutive Ones III
+- Count the Number of Substrings With Dominant Ones
+- Minimum Window Substring
+- Substring with Concatenation of All Words
+- Minimum Size Subarray Sum
+- Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
+- Fruit Into Baskets
+- Subarray Product Less Than K
+- Grumpy Bookstore Owner
+- Moving Stones Until Consecutive II
+- Count Number of Nice Subarrays
+- Number of Subarrays with Bounded Maximum
+- Maximum Erasure Value
+- Longest Subarray of 1's After Deleting One Element
+- Count the Number of Good Subarrays
+- Minimum Consecutive Cards to Pick Up
+- Minimum Operations to Reduce X to Zero
+- Frequency of the Most Frequent Element
+- Subarrays with K Different Integers
+
+
+## Linked List - 25
+- Convert Binary Number in a Linked List to Integer
+- Intersection of Two Linked Lists
+- Middle of the Linked List
+- Linked List Cycle
+- Linked List Cycle II
+- Reverse Linked List
+- Palindrome Linked List
+- Reverse Nodes in k-Group
+- Odd Even Linked List
+- Remove Duplicates from Sorted List
+- Remove Nth Node From End of List
+- Delete the Middle Node of a Linked List
+- Add Two Numbers
+- Sort List
+- Linked List Random Node
+- Copy List with Random Pointer
+- Merge Two Sorted Lists
+- Merge k Sorted Lists
+- Design HashSet
+- Design HashMap
+- Design Browser History
+- Design a Text Editor
+- All O'one Data Structure
+- LRU Cache
+- LFU Cache
+
+
+
+
+
+## Tree -77
+- Binary Tree Preorder Traversal — recursive & iterative. [Core]
+- Binary Tree Inorder Traversal — recursive, iterative, (later: Morris). [Core]
+- Binary Tree Postorder Traversal — stack patterns. [Core]
+- Same Tree — structural equality. [Core]
+- Invert Binary Tree — mirror transform. [Core | Add]
+- Symmetric Tree — mirror invariant (L.left vs R.right). [Core | Add]
+- Maximum Depth of Binary Tree — DFS/BFS template. [Core]
+- Minimum Depth of Binary Tree — BFS for first leaf. [Core]
+- Balanced Binary Tree — postorder returns (height, ok). [Core]
+- Diameter of Binary Tree — track lh+rh while returning height. [Core]
+- Count Complete Tree Nodes — height-based O((log n)²). [Core]
+- Check Completeness of a Binary Tree — BFS null-gap rule. [Core]
+- Binary Tree Level Order Traversal — queue. [Core]
+- Binary Tree Level Order Traversal II — reverse or collect by levels. [Core]
+- Binary Tree Zigzag Level Order Traversal — alternate direction. [Core | Add]
+- Binary Tree Right Side View — last per level / DFS by depth. [Core]
+- Average of Levels in Binary Tree — aggregation. [Nice]
+- Cousins in Binary Tree — track parent & depth. [Core]
+- Vertical Order Traversal of a Binary Tree — (col,row) order carefully. [Adv]
+- Minimum Number of Operations to Sort a Binary Tree by Level — per-level sorting via cycle count. [Adv]
+- Construct Binary Tree from Preorder & Inorder — inorder index map. [Core]
+- Construct Binary Tree from Inorder & Postorder — symmetric. [Core]
+- Construct Binary Tree from Preorder & Postorder — assume full binary. [Adv]
+- Binary Tree Paths — backtrack all root→leaf strings. [Core]
+- Path Sum — existence. [Core]
+- Path Sum II — enumerate valid paths. [Core]
+- Sum Root to Leaf Numbers — carry integer along path. [Core]
+- Binary Tree Maximum Path Sum — downGain; global max. [Core]
+- Path Sum III — prefix-sum hashmap on paths. [Core]
+- Lowest Common Ancestor of a Binary Tree — split detection. [Core]
+- Smallest Subtree with All the Deepest Nodes — depth + LCA pattern. [Adv | Add]
+- All Nodes Distance K in Binary Tree — parent links + BFS. [Core]
+- Populating Next Right Pointers in Each Node — perfect tree O(1) space. [Core]
+- Populating Next Right Pointers in Each Node II — general tree O(1) layer linking. [Core | Add]
+- Serialize and Deserialize Binary Tree — BFS with nulls or DFS preorder. [Core]
+- Subtree of Another Tree — subtree match / serialize. [Core]
+- Leaf-Similar Trees — compare leaf sequences. [Nice]
+- Merge Two Binary Trees — simple structural recursion. [Nice]
+- Flatten Binary Tree to Linked List — reverse postorder or Morris. [Core | Add]
+- Boundary of Binary Tree — left boundary + leaves + right boundary. [Adv | Add]
+- Find Duplicate Subtrees — serialize subtrees; count. [Adv | Add]
+- Construct String from Binary Tree — parentheses formatting. [Nice | Add]
+- Binary Tree Cameras — 3-state DFS (needs/has/covered). [Adv | Add]
+- Distribute Coins in Binary Tree — postorder net coins & moves. [Adv | Add]
+- House Robber III — DP (rob, notRob). [Adv | Add]
+- N-ary Tree Preorder Traversal — recursion/stack. [Nice]
+- N-ary Tree Postorder Traversal — reversed stack trick. [Nice]
+- Maximum Depth of N-ary Tree — DFS/BFS. [Nice]
+- N-ary Tree (basics/definitions). [Nice]
+- Search in a Binary Search Tree — structural. [Core]
+- Insert into a Binary Search Tree — structural. [Core]
+- Delete Node in a BST — two-child case with successor. [Core]
+- Validate Binary Search Tree — min/max bounds or inorder. [Core]
+- Convert Sorted Array to BST — balanced BST. [Core]
+- Convert Sorted List to Binary Search Tree — slow/fast to find mid. [Core]
+- Kth Smallest Element in a BST — inorder count / iterator. [Core]
+- Range Sum of BST — prune by [L,R]. [Core]
+- Minimum Distance Between BST Nodes — inorder adjacent diff. [Core]
+- Convert BST to Greater Tree (aka Greater Sum Tree) — reverse inorder sum. [Core]
+- Trim a BST — rebuild with range pruning. [Core]
+- Increasing Order Search Tree — inorder rewiring. [Nice]
+- Find Mode in Binary Search Tree — inorder with run counts. [Adv]
+- Binary Search Tree Iterator — stack of left spine. [Core]
+- Lowest Common Ancestor of a BST — value-based branching. [Core]
+- Two Sum IV – Input is a BST — set or two-iterator two-pointer. [Core]
+- Closest Nodes Queries in a Binary Search Tree — floor/ceil queries. [Core]
+- Closest Binary Search Tree Value II — k closest via two stacks. [Adv | Add]
+- Serialize and Deserialize BST — preorder + bounds (compact). [Adv]
+- Construct Binary Search Tree from Preorder Traversal — bounds stack/recursion. [Core]
+- Balance a Binary Search Tree — inorder → rebuild. [Core]
+- Recover Binary Search Tree — detect two swapped via inorder anomalies. [Core]
+- All Elements in Two Binary Search Trees — merge two inorders. [Core]
+- Maximum Sum BST in Binary Tree — postorder (isBST, min, max, sum). [Adv]
+- Unique Binary Search Trees — Catalan DP. [Core]
+- Number of Ways to Reorder Array to Get Same BST — combinatorics (choose splits). [Adv]
+- Morris Traversal (Inorder/Preorder) — O(1) space threading. [Tech | Add]
+- Validate Preorder Serialization of a Binary Tree — out-degree minus in-degree slots. [Tech | Add]
+
+## Queue - 16
+- Implement Stack using Queues
+- Implement Queue using Stacks
+- Design Circular Queue
+- Design Front Middle Back Queue
+- Dota2 Senate
+- Find the Winner of the Circular Game
+- Reveal Cards in Increasing Order
+- Minimum Number of K Consecutive Bit Flips
+- Stamping the Sequence
+- Design Circular Deque
+- Jump Game VI
+- Continuous Subarrays
+- Max Value of Equation
+- Sliding Window Maximum
+- Shortest Subarray with Sum at Least K
+- Constrained Subsequence Sum
+
+
+## Recursion & Backtracking - 43
+- Subsets — template: build/skip each element; monotonic index; no side-effects
+- Subsets II — dedupe invariant: sort + skip i>start && nums[i]==nums[i-1]
+- Combinations — fixed length k; early stop: if remaining < need → prune
+- Combination Sum — unbounded choices; sorted + break when sum>target
+- Combination Sum II — bounded usage + dedupe on level; sort + skip dupes
+- Combination Sum III — tight constraints; prune on sum>target or len>k
+- Permutations — use used[] or in-place swap; invariant: each number once
+- Permutations II — dup handling with used + “first occurrence” rule
+- Letter Combinations of a Phone Number — cartesian expansion; index advances
+- Letter Case Permutation — binary branching on alphabetic; keep digits fixed
+- Generate Parentheses — validity invariant: open ≤ n, close ≤ open
+- Palindrome Partitioning — only extend with palindromic suffix; cache pal checks
+- Restore IP Addresses — place 3 dots; segment validity (≤255, no leading zeros)
+- Non‑Decreasing Subsequences — level‑set dedupe via seen per depth
+- Numbers with Same Consecutive Differences — constructive DFS; bound digits
+- K‑th Lexicographical Happy String — avoid adjacent equals; lexicographic build
+- Construct Smallest Number from DI String — stack/greedy + recursive intuition
+- Number of Beautiful Subsets — state constraint on differences; per‑value bucket
+- Beautiful Arrangement — bitmask + divisibility constraint; branch ordering
+- Word Search — grid DFS; mark & restore; 4‑dir; early return on mismatch
+- All Paths from Source to Target (DAG) — backtracking over adjacency; no cycles
+- Unique Paths III — visit all zeros exactly once; path length invariant
+- N‑Queens — column/diag sets; prune aggressively; symmetry awareness
+- N‑Queens II — count only; switch to bitmasks for cols/diags
+- Sudoku Solver — row/col/box constraints; candidate ordering (MRV heuristic)
+- Target Sum — DFS with ± choice; memo on (i, sum)
+- Predict the Winner — minimax: choose ends; memo (l,r) returning net score
+- Different Ways to Add Parentheses — divide & conquer; memo on substring
+- Expression Add Operators — DFS over digits; carry prev, total, lastFactor
+- Matchsticks to Square — bin packing (4 buckets); sort desc; avoid symmetry
+- Partition to K Equal Sum Subsets — used bitmask; bucket sum target; memo states
+- Split Array into Fibonacci Sequence — string → ints; bounds & leading zeros
+- Word Search II — Trie + backtracking; mark visited; early stop with trie
+- Remove Invalid Parentheses — min removals; prune by counts; dedupe with set
+- Maximum Compatibility Score Sum — assignment search; bitmask DP/backtracking
+- Special Binary String — recursive decomposition + greedy reorder of specials
+- Regular Expression Matching — recursion/DP; . and *; memo (i,j)
+- Wildcard Matching — ? and *; greedy or DP; recursion with memo (optional)
+- Fibonacci Number, Pow(x, n) (divide & conquer recursion warm‑ups)
+- Power of Two (pick one; skip Three/Four)
+- Count Good Numbers, Minimum Non‑Zero Product (math; not backtracking)
+- Find the Winner of the Circular Game (Josephus) (math recurrence)
+- Permutation Sequence (factoradic combinatorics, not search)
+- Integer to English Words, Basic Calculator (parsing/formatting; recursion optional)
+
+## Matrix -58
+- Convert 1D Array Into 2D Array — mapping indices. [Warm-up]
+- Transpose Matrix — in-place swaps above diagonal. [Core]
+- Set Matrix Zeroes — O(1) markers using first row/col. [Core]
+- Rotate Image — transpose + reverse / 4-cycle layer swaps. [Core]
+- Sort the Matrix Diagonally — group by r-c. [Core]
+- Shift 2D Grid — modular index mapping. [Warm-up]
+- Cyclically Rotating a Grid — ring rotation by k. [Core]
+- Matrix Similarity After Cyclic Shifts — invariants on cycles. [Warm-up]
+- Rotating the Box — gravity + rotation logic. [Core]
+- Matrix Diagonal Sum — index conditions. [Warm-up]
+- Diagonal Traverse — direction toggling. [Core]
+- Spiral Matrix — boundary shrink loop. [Core]
+- Spiral Matrix II — construct with spiral write. [Core]
+- Matrix Cells in Distance Order — BFS/order by Manhattan. [Warm-up]
+- Largest Local Values in a Matrix — 3×3 window. [Warm-up]
+- Maximum Sum of an Hourglass — fixed pattern sum. [Warm-up]
+- Matrix Block Sum — 2D prefix sum intro. [Core]
+- Equal Row and Column Pairs — hashing/serialization. [Core]
+- Difference Between Ones and Zeros in Row and Column — per-row/col counts. [Warm-up]
+- Lucky Numbers in a Matrix — min-in-row, max-in-col. [Warm-up]
+- Row With Maximum Ones — per-row scan or BS. [Warm-up]
+- Richest Customer Wealth — row sum. [Warm-up]
+- Prime in Diagonal — primality check on diagonals. [Warm-up]
+- Game of Life — in-place 2-bit encoding. [Core]
+- Where Will the Ball Fall — simulate slopes per column. [Core]
+- Image Overlap — shift & count overlap; note FFT idea. [Adv]
+- Check if Move is Legal — Othello multi-direction flips. [Core]
+- Queens That Can Attack the King — rays until blocker. [Core]
+- Check if Matrix is X-Matrix — positional rule check. [Warm-up]
+- Max Increase to Keep City Skyline — row/col maxima. [Warm-up]
+- Make a Square with the Same Color — small-case brute with rules. [Warm-up]
+- Subrectangle Queries — lazy vs direct apply trade-offs. [Adv]
+- Minimum Operations to Make a Uni-Value Grid — mod/gcd step feasibility. [Core]
+- Number of Laser Beams in a Bank — count per row logic. [Warm-up]
+- Find Valid Matrix Given Row and Column Sums — greedy fill; invariants on residuals. [Core]
+- Valid Sudoku — bitmasks for row/col/box. [Core]
+- Valid Tic-Tac-Toe State — counts + winner constraints. [Core]
+- Count Square Submatrices With All Ones — DP min-of-3. [Core]
+- Maximal Square — same DP; track max side. [Core]
+- Number of Submatrices With All Ones — heights + stack or DP counting. [Core]
+- Largest Submatrix With Rearrangements — sort heights per row. [Adv]
+- Maximal Rectangle — histogram per row + monotonic stack. [Core]
+- Submatrix Sum Equals K — row compression + 1D prefix hash. [Core]
+- Max Sum of Rectangle No Larger Than K — row compression + ordered set of prefixes. [Core]
+- Flood Fill — DFS/BFS template. [Core]
+- Number of Islands — count components. [Core]
+- Surrounded Regions — border-first flood, then flip. [Core]
+- Pacific Atlantic Water Flow — reverse BFS from oceans. [Core]
+- Walls and Gates — multi-source BFS distances. [Core]
+- Rotting Oranges — multi-source BFS with time. [Core]
+- Shortest Path in Binary Matrix — 8-dir BFS shortest path. [Core]
+- Find the Minimum Area to Cover All Ones I — bounding rectangle. [Core]
+- Find the Minimum Area to Cover All Ones II — variant; extend method. [Adv]
+- Count Submatrices with Top-Left Element and Sum < k — prefix sums + pruning. [Adv]
+- Find the Grid of Region Average — region aggregation; careful borders. [Adv]
+- Increment Submatrices by One (or equivalent) — 2D diff array; O(1) updates. [Core]
+- Range Add Queries 2D — generalize diff + 2D prefix restore. [Core]
+- Subrectangle Queries (revisit) — contrast diff vs direct for ops/memory. [Adv]
+- Image Overlap (FFT approach) — convolution to accelerate. [Opt]
+- Any “Large N” block-sum variants — optimize with integral image. [Opt]
+
+## Binary Search - 74
+- Binary Search (template; leftmost/rightmost)
+- Guess Number Higher or Lower (mid/overflow, termination)
+- First Bad Version (leftmost true predicate)
+- Search Insert Position (lower_bound)
+- Find First and Last Position of Element in Sorted Array (leftmost/rightmost)
+- Find Smallest Letter Greater Than Target (upper_bound on circular domain)
+- H-Index II (boundary on sorted citations)
+- Arranging Coins (search on k*(k+1)/2 ≤ n)
+- Find Target Indices After Sorting Array (2× bounds)
+- Kth Missing Positive Number (count ≤ mid or direct scan with gaps)
+- Longest Subsequence With Limited Sum (prefix sums + upper_bound)
+- Find the Distance Value Between Two Arrays (sort + nearest check with BS)
+- Minimum Absolute Sum Difference (lower_bound on second array)
+- Heaters (radius via nearest heater BS)
+- Single Element in a Sorted Array (parity-aware BS)
+- Minimum Common Value (can do two pointers; BS variant on one array)
+- Search a 2D Matrix (treat as 1D)
+- Search a 2D Matrix II (row/col monotone; BS per row optional)
+- Count Negative Numbers in a Sorted Matrix (BS per row or stair-walk)
+- Find Peak Element (mid vs neighbor)
+- Find a Peak Element II (2D peak via column/row BS)
+- Peak Index in a Mountain Array (unimodal)
+- Find Minimum in Rotated Sorted Array
+- Search in Rotated Sorted Array
+- Find Minimum in Rotated Sorted Array II (duplicates)
+- Search in Rotated Sorted Array II (duplicates)
+- Find in Mountain Array (interactive; advanced boundary reasoning)
+- Time Based Key-Value Store (floor time via BS)
+- Online Election (prefix winners + BS by time)
+- Find Right Interval (search next start)
+- Most Beautiful Item for Each Query (prefix best + BS by price)
+- Random Pick with Weight (roulette prefix + BS)
+- Plates Between Candles (prefix + nearest candle + BS)
+- Range Frequency Queries (value→positions lists + 2× BS)
+- Successful Pairs of Spells and Potions (sort + BS threshold)
+- Capacity to Ship Packages Within D Days
+- Koko Eating Bananas
+- Find the Smallest Divisor Given a Threshold
+- Minimum Number of Days to Make M Bouquets
+- Minimum Speed to Arrive on Time
+- Minimum Time to Repair Cars
+- Maximum Running Time of N Computers
+- Maximum Value at a Given Index in a Bounded Array
+- Maximum Side Length of a Square With Sum ≤ Threshold (BS on side; prefix sums)
+- Maximum Number of Removable Characters (BS on k + subsequence check)
+- Magnetic Force Between Two Balls
+- Maximum Tastiness of Candy Basket
+- Minimum Limit of Balls in a Bag
+- Minimized Maximum of Products Distributed to Any Store
+- Minimize the Maximum Difference of Pairs
+- Maximum Candies Allocated to K Children
+- Split Array Largest Sum
+- Maximum Number of Tasks You Can Assign (BS on k + greedy/pills)
+- Kth Smallest Number in Multiplication Table (count≤mid)
+- Find K-th Smallest Pair Distance (count pairs ≤ mid)
+- Kth Smallest Element in a Sorted Matrix (row-wise counts)
+- Kth Smallest Product of Two Sorted Arrays (sign-aware counts)
+- Find the Kth Smallest Sum of a Matrix With Sorted Rows (heap or BS on sum)
+- Find the Median of the Uniqueness Array (count subarrays with uniqueness ≤ mid)
+- Minimize the Maximum Distance to Gas Station — NEW (binary search on double; precision handling)
+- Maximum Average Subarray II — NEW (BS on average + prefix transforms)
+- Search in a Sorted Array of Unknown Size — NEW (exponential window → BS)
+- Cutting Ribbons — NEW (BS on rope length; count pieces)
+- Preimage Size of Factorial Zeros Function — NEW (BS on trailing zeros count)
+- Find K Closest Elements — NEW (BS window start / boundary then expand)
+- Find Duplicate Number (alternate BS-on-value with pigeonhole)
+- Sqrt(x) (integer root; rounding & overflow care)
+- Maximum White Tiles Covered by a Carpet (two pointers / sliding window)
+- Maximum Number of Robots Within Budget (sliding window + deque; some BS variants exist, but window is primary)
+- Find the Number of Subarrays Where Boundary Elements Are Maximum (monotonic stack)
+- Most Profit Assigning Work (greedy)
+- Count Number of Rectangles Containing Each Point (sort + BIT; BS only as helper)
+- Minimum Operations to Make All Array Elements Equal (prefix sums by queries; no BS)
+- Earliest Second to Mark Indices I (problem-specific greedy/check; not a standard BS staple)
+- Kth Smallest Amount With Single Denomination Combination (less standard)
+- Maximize the Minimum Powered City (varies by platform; keep if you like it)
+
+
+## Stack - 49
+- Valid Parentheses (Parentheses) → Prefix balance never negative; final balance = 0.
+- Minimum Add to Make Parentheses Valid (Parentheses) → Count unmatched opens & closes.
+- Simplify Path (Stack / Path Normalization) → Push dir, pop on ..; ignore ./empty.
+- Crawler Log Folder (Stack / Path Normalization) → Same invariant; simpler inputs.
+- Evaluate Reverse Polish Notation (Eval / Stack) → Push nums; pop two per operator; apply.
+- Decode String (Parser / Stack) → Frames hold (prev, k); unwind on ].
+- Reverse Substrings Between Each Pair of Parentheses (Parser / Stack) → Push segment; reverse on ).
+- Implement Stack Using Queues (Design) → Maintain last-in via 1 costly op.
+- Implement Queue using Stacks (Design) → Amortized O(1) by lazy transfer.
+- Min Stack (Design) → Track min with paired stack or diff-trick invariant.
+- Max Stack (Design) → Mirror Min Stack; optional doubly-linked + map if supporting popMax.
+- Validate Stack Sequences (Simulation) → Simulate push/pop; ensure pop order feasible.
+- Baseball Game (Simulation / Stack) → Keep running stack; apply ops.
+- Final Prices With a Special Discount in a Shop (Monotonic) → Next smaller/equal to right.
+- Next Greater Element I (Monotonic) → Decreasing stack; pop while < current.
+- Next Greater Element II (circular) (Monotonic) → Traverse 2×; indices modulo n.
+- Daily Temperatures (Monotonic) → Next greater temperature; store indices.
+- Online Stock Span (Monotonic) → Decreasing stack of (price, span); accumulate.
+- Remove K Digits (Greedy+Stack) → While top > cur and k>0, pop; strip zeros.
+- Remove Duplicate Letters
+- Smallest Subsequence of Distinct Characters (Greedy+Stack) → While top > cur and appears later, pop; maintain seen set.
+- Make The String Great (Pair-Cancel / Stack) → Cancel adjacent same letter with opposite case.
+- Removing Stars From a String (Pair-Cancel / Stack) → Pop on *.
+- Remove All Adjacent Duplicates In String II (Run-length Stack) → Track char+count; remove at k.
+- Minimum Remove to Make Valid Parentheses (Parentheses / Index Stack) → Remove unmatched indices.
+- Score of Parentheses (Parentheses / Stack) → () = 1; AB = A+B; (A) = 2A via levels.
+- Sum of Subarray Minimums (Monotonic / Range) → Count as next/prev strictly smaller boundaries.
+- Largest Rectangle In Histogram (Monotonic / Range) → Next/prev smaller; area on pop.
+- Maximal Rectangle (2D → Histogram) → Per row heights → apply #27.
+- Maximum Width Ramp (Monotonic / Indices) → Decreasing stack of left candidates; scan right.
+- Min Cost Tree From Leaf Values (Monotonic / Pairing) → Increasing stack; merge local minima.
+- Sliding Window Maximum (Deque) → Monotone deque holds decreasing values; eject out-of-window.
+- Shortest Subarray with Sum at Least K (Deque / Prefix) → Increasing deque of prefix sums.
+- Number of Visible People in a Queue (Monotonic) → Decreasing stack; count pops + peek.
+- Car Fleet (Monotonic by arrival time) → Sort by position; merge fleets by arrival time.
+- Asteroid Collision (Collision Stack) → Resolve while left-moving meets top right-moving.
+- Robot Collisions (Collision Stack / Variants) → Same invariant; weight/survival rules.
+- 132 Pattern (Monotonic from right) → Stack of potential ‘3’; track third (best ‘2’).
+- Basic Calculator II (Parser / Precedence) → Accumulate term; last op sign; handle */ immediately.
+- Basic Calculator III (Parser with parentheses) → Operator stack precedence; pop till ( on ).
+- Parsing A Boolean Expression (Parser / Stack) → Push tokens; evaluate on ).
+- Number of Atoms (Parser / Multiplier) → Stack of maps; multiply on )count.
+- Exclusive Time of Functions (Call Stack / Time) → Push on start; on end, add span; pause/resume.
+- Maximum Frequency Stack (Design / Buckets) → Map: val→freq; freq→stack; track maxFreq.
+- Flatten Nested List Iterator (Iterator / Stack) → Stack of iterators; expand lazily.
+- Find Permutation (Stack-ish / Greedy) → Use stack to resolve ‘D’ runs.
+- Ternary Expression Parser (Parser) → Right-to-left stack; niche.
+- Minimum String Length After Removing Substrings (Custom reductions) → Problem-specific cancels.
+- Clear Digits (Custom reductions) → Same idea; simple.
+
+## Heap - 45
+- Kth Largest Element In a Stream 
+- Last Stone Weight 
+- Take Gifts From the Richest Pile 
+- Final Array State After K Multiplication Operations I 
+- High Five 
+- Minimum Cost to Connect Sticks 
+- Campus Bikes 
+- Rearrange String k Distance Apart 
+- K Closest Points to Origin 
+- Kth Largest Element In An Array 
+- Task Scheduler 
+- Design Twitter 
+- Least Number of Unique Integers after K Removal	
+- Furthest Building You Can Reach	
+- Minimize Deviation in Array	
+- Maximum Subsequence Score	
+- Single Threaded CPU 
+- Seat Reservation Manager	
+- Process Tasks Using Servers	
+- Find The Kth Largest Integer In The Array	
+- Reorganize String 
+- Longest Happy String 
+- Car Pooling 
+- Range Sum of Sorted Subarray Sums	
+- Find Median From Data Stream 
+- Maximum Performance of a Team	
+- IPO 
+- Minimum Cost to Hire K Workers	
+- Number of Flowers in Full Bloom	
+- Constrained Subsequence Sum	
+- Find Building Where Alice and Bob Can Meet
+- Merge k Sorted Lists 
+- Top K Frequent Elements 
+- Top K Frequent Words
+- K Smallest Pairs 
+-  Find K Pairs with Smallest Sums
+- Sliding Window Median 
+- Kth Smallest in a Sorted Matrix
+- Smallest Range Covering Elements from K Lists 
+- Trapping Rain Water II 
+- Swim in Rising Water 
+-  Path With Minimum Effort 
+- Prim’s MST 
+- Super Ugly Number 
+-  Ugly Number II
+
+## Bitwise - 45
+- Number of 1 Bits [⭐] — Kernighan’s trick x &= x-1 + popcount invariants.
+- Counting Bits [⭐] — DP: f[i]=f[i>>1]+(i&1) and f[i]=f[i&(i-1)]+1.
+- Power of Two [⭐] — Single-bit test: x && !(x&(x-1)).
+- Power of Four [⭐] — Power-of-two + mask on even positions.
+- Number Complement [⚙️] — Width-limited inversion: (~x) & mask.
+- Reverse Bits [⚙️] — Bit groups / masks / swaps.
+- Sum of Two Integers [⭐] — Add via XOR (sum) + AND<<1 (carry).
+- Add Binary [⚙️] — Same carry mechanics on strings.
+- Divide Two Integers [⚙️] — Repeated subtract with shifts; overflow edges.
+- Single Number [⭐] — XOR cancels duplicates.
+- Single Number II [⭐] — Per-bit counts mod 3 (or state machine).
+- Single Number III [⭐] — Split by rightmost set bit.
+- Missing Number [⚙️] — XOR with index set; or Gauss vs overflow.
+- Hamming Distance [⚙️] — popcount(x^y); contributions per bit.
+- Total Hamming Distance [⭐] — Sum over bits: ones * zeros.
+- Gray Code [⚙️] — g(i)=i^(i>>1); decoding inverse logic.
+- Decode XORed Array [⚙️] — Prefix XOR reconstruction.
+- Find the Original Array of Prefix XOR [⚙️] — Invert prefix relation.
+- Decode XORed Permutation [⚙️] — Use XOR of 1..n and prefix trick.
+- XOR Queries of a Subarray [⭐] — xor(l..r) = pref[r]^pref[l-1].
+- Find XOR Sum of All Pairs Bitwise AND [⭐] — Identity
+- Maximum XOR of Two Numbers in an Array [⭐] — Binary trie, MSB→LSB greedy.
+- Maximum XOR With an Element From Array (offline queries) [⭐] — Sort by threshold + trie.
+- Minimum XOR of Two Numbers in an Array [⚙️] — Sort + adjacent XOR or trie.
+- Bitwise AND of Numbers Range [⭐] — Common prefix via shifting/clearing tails.
+- Minimum Flips to Make A or B Equal to C [⭐] — Per-bit case analysis.
+- Longest Nice Subarray [⭐] — Window with OR mask; enforce (mask & x)==0.
+- Shortest Subarray with OR at Least K [⭐] — Monotone OR; keep per-bit counts (≤32 states).
+- Find Subarray with Bitwise OR Closest to K [🎓] — Maintain set of OR states; prune dominated.
+- Number of Subarrays with AND Value of K [⭐] — Compress possible ANDs per end index (bits only drop).
+- Longest Subarray with Maximum Bitwise AND [⚙️] — Similar AND-state compression logic.
+- Maximum OR [⚙️] — Greedy per bit; try keep higher bits on.
+- Minimize OR of Remaining Elements Using Operations [🎓] — Greedy/MSB testing under op constraints.
+- Find Longest Awesome Substring [⭐] — Parity-mask trick; at most one odd count.
+- Neighboring Bitwise XOR [⚙️] — Reconstruct from b[i]=a[i]^a[i+1] + constraints.
+- Minimum Number of Operations to Make Array XOR Equal to K [⚙️] — Parity differences vs allowed ops.
+- Minimum Array End [⚙️] — Construct from highest bits downward respecting constraints.
+- Maximum XOR Product [🎓] — MSB→LSB constructive under product/XOR constraints.
+- Minimum XOR Sum of Two Arrays [⭐] — DP over subsets (O(n·2^n)), or Hungarian.
+- Minimum Operations to Form Subsequence with Target Sum [⭐] — Powers of two counts; split/join greedily per bit.
+- Triples with Bitwise AND Equal to Zero [🎓] — Frequency conv idea; SOS DP flavor for AND space.
+- UTF-8 Validation [⚙️] — Header masks 0/110/1110/11110, continuation 10xxxxxx.
+- Smallest Sufficient Team [⭐] — Bitmask DP over skills; minimize team size.
+- Can I Win [⭐] — State compression + memo, pruning with sums.
+- Shortest Path Visiting All Nodes [⭐] — BFS on (node,mask); classic state graph.
+- Partition to K Equal Sum Subsets [🎓] — Bitmask DP/backtracking with pruning & memo.
+- Matchsticks to Square [🎓] — Bitmask/backtracking; per-edge sum constraints.
+
+## Trie - 19
+- Implement Trie (Prefix Tree)
+- Design Add And Search Words Data Structure (wildcards; node expandability)
+- Counting Words With a Given Prefix (store pass_count/prefix_count on nodes)
+- Sum of Prefix Scores of Strings (node frequency accumulation)
+- Word Search II (board DFS + Trie + early-stop; mark-visited; node-pruning on empty)
+- Extra Characters in a String (DP with Trie to speed transitions)
+- Count Prefix and Suffix Pairs I (intro to dual constraints; careful counting)
+- Count Prefix and Suffix Pairs II (optimize; suffix trie/reversed trie; avoid double-count)
+- Design Search Autocomplete System (ranking top-k per node; memory vs. update costs)
+- Remove Sub-Folders from the Filesystem (lexicographic sort vs. Trie solution; compare)
+- Design File System (paths to tree; permissions; constraints)
+- Design In-Memory File System (full CRUD, file vs dir nodes; lazy creation)
+- Maximum XOR of Two Numbers in an Array (bitwise Trie; 0/1 child; greedy complement)
+- Replace Words (dictionary → Trie → replace prefixes in a sentence)
+- Stream of Characters (reversed Trie; rolling stream buffer; memory/time trade-offs)
+- Search Suggestions System (Trie + per-node sorted top-k; differs subtly from Autocomplete System)
+- Implement Magic Dictionary (near-miss / one-edit queries; branching at one mismatch)
+- Palindrome Pairs (Trie with palindromic suffix checks; tricky edge cases)
+
+
+***
+
+## Suggested Practice Picks (minimal but sufficient)
+
+**Strings**
+
+*   KMP/Z: Implement both on `pattern#text`; test all occurrences.
+*   Manacher: Longest Palindromic Substring (do both DP and Manacher).
+*   SA+LCP: Count distinct substrings; Longest Duplicate Substring.
+*   SAM: Count distinct substrings; # occurrences of a query string.
+
+**Flow/Matching**
+
+*   Hopcroft–Karp: Maximum bipartite matching on a grid/assign pairs.
+*   Dinic: Min cut partitioning; disjoint paths.
+*   Min‑Cost Max‑Flow: Assignment with costs / min cost to connect pairs.
+
+**BIT**
+
+*   Count inversions / “count smaller after self”.
+*   K‑th removal in an array (order statistics via BIT).
+*   Range add + range sum with two BITs.
+
+**Typical BIT Patterns**
+
+* Inversion count / “Count of smaller to the right” (compress values, sweep from right).
+* K‑th order statistic in dynamic multiset of integers.
+* Offline range counting (e.g., add points in value order; answer queries with thresholds).
+* Coordinate compression when values are large/sparse.
+
+***
